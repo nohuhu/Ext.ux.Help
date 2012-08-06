@@ -1,0 +1,32 @@
+{
+    children: [{
+        text: "Welcome to Ext.ux.Help",
+        path: "default",
+        expanded: true,
+        children: [{
+            path: "intro",
+            text: "Introduction"
+        }, {
+            path: "foo/index",
+            text: "Section foo",
+            children: [{
+                path: "foo/bar/index",
+                text: "Section bar",
+                children: [{
+                    path: "foo/bar/baz/index",
+                    text: "Section baz",
+                    children: [{
+                        path: "foo/bar/baz/page",
+                        text: "Section baz page (missing)"
+                    }]
+                }, {
+                    path: "foo/bar/page",
+                    text: "Section bar page"
+                }]
+            }, {
+                path: "foo/page",
+                text: "Section foo page"
+            }]
+        }]
+    }]
+}

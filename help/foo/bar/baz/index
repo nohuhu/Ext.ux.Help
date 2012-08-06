@@ -1,0 +1,6 @@
+Bar section doesn't have a title, so you'll see whatever helpTitle config option is.
+
+O-bla-di, o-bla-da.
+
+[Open baz page -- it's missing, that's intentional. You'll see error message.](^foo/bar/baz/page)
+

@@ -1,0 +1,71 @@
+Welcome to Ext.ux.Help!
+=======================
+
+# Heading 1
+
+Paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat, nisl
+et molestie varius, enim justo volutpat metus, ut venenatis dui metus non lacus. Morbi posuere
+fringilla condimentum. Sed suscipit lectus vel eros laoreet varius. Quisque sodales porta metus,
+nec venenatis dolor placerat et. Fusce dignissim ligula at mi molestie consectetur. Nam sodales,
+mauris at iaculis tempor, elit risus adipiscing magna, non auctor dolor massa eget purus. Class
+aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec a
+nibh sit amet enim aliquam accumsan id ut ante. Duis quis urna nec quam semper luctus non vitae
+nibh. Morbi congue aliquam urna in convallis. Morbi eget leo cursus erat pulvinar varius non eget
+leo. Praesent rutrum arcu ac purus hendrerit facilisis ac vitae mauris. Phasellus blandit
+malesuada elit, id pretium dui congue et. Donec neque sem, condimentum in varius non, bibendum
+quis turpis.
+
+List 1:
+
+   - Foo
+   - Bar
+   - Baz
+
+## Heading 2
+
+Another list:
+
+* Blah
+    - Foo
+    - Bar
+    - Baz
+* Blah
+    1. Numbered one
+    2. Numbered two
+    3. Numbered three
+        * Third level 1
+        * Third level 2
+            1. Fourth level 1
+            2. Fourth level 2
+                - Fifth level 1
+                - Fifth level 2
+            3. Fourth level 3
+        * Third level 3
+    4. Numbered four
+* Blah
+
+### Heading 3
+
+> Blockquote:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consequat,
+nisl et molestie varius, enim justo volutpat metus, ut venenatis dui metus non lacus. Morbi
+posuere fringilla condimentum. Sed suscipit lectus vel eros laoreet varius. Quisque sodales
+porta metus, nec venenatis dolor placerat et. Fusce dignissim ligula at mi molestie consectetur.
+Nam sodales, mauris at iaculis tempor, elit risus adipiscing magna, non auctor dolor massa eget
+purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+Donec a nibh sit amet enim aliquam accumsan id ut ante. Duis quis urna nec quam semper luctus non
+vitae nibh. Morbi congue aliquam urna in convallis. Morbi eget leo cursus erat pulvinar varius
+non eget leo. Praesent rutrum arcu ac purus hendrerit facilisis ac vitae mauris. Phasellus 
+blandit malesuada elit, id pretium dui congue et. Donec neque sem, condimentum in varius non, 
+bibendum quis turpis.  
+
+#### Heading 4
+
+    code code code code code
+    code code code code code
+    code code code code code
+
+##### Heading 5
+
+[this link will open a popup](>demo_popup)  
+[this link will open intro page](^intro)

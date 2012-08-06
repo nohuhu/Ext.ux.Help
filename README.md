@@ -40,3 +40,6 @@ Help icon was taken from Fugue icon set:
 These icons are licensed under a Creative Commons
 Attribution 3.0 License.
 <http://creativecommons.org/licenses/by/3.0/>
+
+Markdown CSS based on stylesheet by Kevin Burke:
+<https://bitbucket.org/kevinburke/markdowncss>

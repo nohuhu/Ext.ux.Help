@@ -1,0 +1,7 @@
+0.02  Aug 10 2012 10:00
+- Added an option to align help popup window to HTML element
+- Added fade in animation to popup window
+- Added setLang method to Panel class
+
+0.01  Aug  5 2012 20:08
+- Initial public release

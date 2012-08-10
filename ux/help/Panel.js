@@ -160,6 +160,19 @@ Ext.define('Ext.ux.help.Panel', {
     },
     
     /**
+     * setLang
+     *
+     * Set help locale to specified identifier.
+     */
+    setLang: function(lang) {
+        var me = this;
+        
+        me.lang = me.tree.lang = me.pages.lang = lang;
+        
+        return me;
+    },
+    
+    /**
      * loadHelp
      *
      * Initialize help Panel, optionally replacing default pages with ones from argument.

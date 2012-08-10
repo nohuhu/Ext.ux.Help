@@ -72,8 +72,8 @@ Ext.define('Ext.ux.help.ContentPanel', {
                                 'href="#" ',
                                 'onclick="',
                                     '(function(event) {',
-                                        'var el = new Ext.Element(event.target),',
-                                            'ev = new Ext.EventObjectImpl(event);',
+                                        'var ev = new Ext.EventObjectImpl(event),',
+                                            'el = new Ext.Element(ev.getTarget());',
                                         
                                         'Ext.ux.help.Manager.popup({',
                                             "page: '$1',",

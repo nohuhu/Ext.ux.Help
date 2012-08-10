@@ -127,7 +127,7 @@ Ext.define('Ext.ux.help.Manager', {
      */
     popup: function(params) {
         var me = this,
-            page, url;
+            page, url, arg;
     
         if ( !Ext.isObject(params) ) {
             throw 'Ext.ux.help.Manager.popup() requires named arguments';
@@ -135,15 +135,17 @@ Ext.define('Ext.ux.help.Manager', {
         
         page = params.page;
         url  = me.getPageUrl(page);
+        arg  = Ext.merge({}, params, {
+            page:     page,
+            position: params.position || 'tl-bl?'
+        });
         
         Ext.Ajax.request({
             url:      url,
             scope:    me,
             success:  me.onPopupLoadSuccess,
             failure:  me.onLoadFailure,
-            pageId:   page,
-            alignEl:  params.el,
-            alignPos: params.position || 'bl-tl?'
+            argument: arg
         });
     },
     
@@ -164,33 +166,49 @@ Ext.define('Ext.ux.help.Manager', {
     
     onPopupLoadSuccess: function(response, options) {
         var me = this,
-            win, alignEl, alignPos;
+            win, arg, alignEl, alignPos, config;
         
         if ( !response || !Ext.isObject(response) ) {
             me.onPageLoadFailure(response, options);
         };
         
-        win = Ext.ComponentQuery.query('window[page="' + options.pageId + '"]')[0];
+        arg = options.argument;
         
-        alignEl  = options.alignEl;
-        alignPos = options.alignPos;
+        win = Ext.ComponentQuery.query('window[page="' + arg.page + '"]')[0];
+        
+        alignEl  = arg.el;
+        alignPos = arg.position;
+        config   = {
+            page:      arg.page,
+            text:      response.responseText,
+            helpTitle: me.helpTitle
+        };
+        
+        if ( arg.width ) {
+            config.width = arg.width;
+        };
+        
+        if ( arg.height ) {
+            config.height = arg.height;
+        };
         
         if ( win ) {
             win.focus();
         }
         else {
-            win = new Ext.ux.help.Popup({
-                page:      options.pageId,
-                text:      response.responseText,
-                helpTitle: me.helpTitle
-            });
-            
-            win.show();
+            win = new Ext.ux.help.Popup(config);
+            win.showAt(-1000, -1000);
+            win.hide();
         };
 
         if ( alignEl ) {
             win.alignTo(alignEl, alignPos);
         };
+        
+        win.getEl().fadeIn({
+            from:    { opacity: 0 },
+            duration: 300
+        });
     },
     
     onLoadFailure: function(response, options) {

@@ -45,7 +45,8 @@ Ext.define('Ext.ux.help.ContentPanel', {
     },
     
     convertText: function(text) {
-        var result = {},
+        var me     = this,
+            result = {},
             converter, html, match, href;
 
         converter = new Markdown.Converter();
@@ -58,8 +59,9 @@ Ext.define('Ext.ux.help.ContentPanel', {
         
         // Markdown processing mungles all URLs, so we add placeholders
         // at first stage, and then replace them with actual JavaScript later
-        text = text.replace(/\[(.*?)\]\(\^([-_0-9\/#?%=\w]+)\)/g, '[$1](_ux_help_load_page_$2)' );
-        text = text.replace(/\[(.*?)\]\(>([-_0-9\/#?%=\w]+)\)/g,  '[$1](_ux_help_load_popup_$2)');
+        text = text.replace(/\[(.*?)\]\(\^([^)]+)\)/g, '[$1](_ux_help_load_page_$2)'  );
+        text = text.replace(/\[(.*?)\]\(>([^)]+)\)/g,  '[$1](_ux_help_load_popup_$2)' );
+        text = text.replace(/!\[(.*?)\]\(!([^(]+)\)/g, '![$1](_ux_help_insert_img_$2)');
         
         html = converter.makeHtml(text);
         
@@ -84,6 +86,10 @@ Ext.define('Ext.ux.help.ContentPanel', {
                                     '})(event)',
                                 '"'
                             ].join('')
+                           );
+        
+        html = html.replace(/"_ux_help_insert_img_([^"]+)"/g,
+                            '"' + me.baseUrl + '$1"'
                            );
         
         result.html = html;

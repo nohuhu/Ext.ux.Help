@@ -30,9 +30,13 @@ Ext.define('Ext.ux.help.Pages', {
     
     addPage: function(page, text) {
         var me = this,
-            panel;
+            panel, baseUrl;
+        
+        baseUrl = Ext.String.format(me.helpUrl, me.lang).replace(/\/+$/, '/');
         
         panel = new Ext.ux.help.ContentPanel({
+            baseUrl:   baseUrl,
+            
             pageId:    page,
             text:      text,
             helpTitle: me.helpTitle

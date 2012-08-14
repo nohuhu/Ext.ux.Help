@@ -1,3 +1,6 @@
+0.03  Aug 14 2012 16:01
+- Added support for image shortcuts, analogous to ^ and >
+
 0.02  Aug 10 2012 10:00
 - Added an option to align help popup window to HTML element
 - Added fade in animation to popup window
